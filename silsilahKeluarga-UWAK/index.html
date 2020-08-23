@@ -28,6 +28,10 @@
 .node.assistant rect {
     fill: #9e9e9e;
 }
+[link-id] path {
+        stroke: #000000;
+        stroke-width: 7;
+    }
     </style>
 
 </head>
@@ -62,7 +66,6 @@ function tree(nodes) {
 
   for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
-          console.log(node.tags)
           if(node.tags == "assistant")
           {
             node.tags = ["assistant"]
@@ -83,7 +86,6 @@ function tree(nodes) {
           //         break;
           // }
       }
-console.log(nodes)
 
     var chart = new OrgChart(document.getElementById("tree"), {
         enableDragDrop: false,
