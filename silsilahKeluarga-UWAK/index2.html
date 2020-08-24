@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Keluarga Q</title>
+    <title>SILSILAH KELUARGA UWAK</title>
     <style id="myStyles">
         html, body {
     margin: 0px;
@@ -18,27 +18,16 @@
     height: 100%;
 }
 
-.node.gray rect {
-    fill: #9e9e9e;
-}
-.node.blue rect {
+.node.M rect {
     fill: #2979ff;
 }
-.node.pink rect {
+
+.node.F rect {
     fill: #ec407a;
 }
-.node.green rect {
-    fill: #43a047;
-}
-.node.purple rect {
-    fill: #6139EE;
-}
-
-
 .node.assistant rect {
     fill: #9e9e9e;
 }
-
 [link-id] path {
         stroke: #000000;
         stroke-width: 7;
@@ -75,37 +64,17 @@ function tree(nodes) {
   OrgChart.templates.ana.field_1 = '<text style="font-size: 16px;" fill="#ffffff" x="125" y="80" text-anchor="middle">{val}</text>';
   OrgChart.templates.ana.field_2 = '<text style="font-size: 12px; font-weight: bold;" fill="#ffffff" x="125" y="20" text-anchor="middle">{val}</text>';
 
-for (var i = 0; i < nodes.length; i++) {
+  for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
-          console.log(node.tags)
           if(node.tags == "assistant")
           {
             node.tags = ["assistant"]
           }
           else{
-            if(node.color == "#9e9e9e")
-              {
-                node.tags = ["gray"]
-              }
-            else if(node.color == "#2979ff")
-              {
-                node.tags = ["blue"]
-              }
-            else if(node.color == "#ec407a")
-              {
-                node.tags = ["pink"]
-              }
-            else if(node.color == "#43a047")
-              {
-                node.tags = ["green"]
-              }
-            else if(node.color == "#6139EE")
-              {
-                node.tags = ["purple"]
-              }
-              else
-              {
-                node.tags = ["gray"]
+            if(node.gender == "F")
+              {node.tags = ["F"]}
+              else{
+                node.tags = ["M"]
               }
           }
           // switch (node.gender) {
@@ -117,7 +86,6 @@ for (var i = 0; i < nodes.length; i++) {
           //         break;
           // }
       }
-console.log(nodes)
 
     var chart = new OrgChart(document.getElementById("tree"), {
         enableDragDrop: false,

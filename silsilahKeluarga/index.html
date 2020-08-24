@@ -18,13 +18,23 @@
     height: 100%;
 }
 
-.node.M rect {
+.node.gray rect {
+    fill: #9e9e9e;
+}
+.node.blue rect {
     fill: #2979ff;
 }
-
-.node.F rect {
+.node.pink rect {
     fill: #ec407a;
 }
+.node.green rect {
+    fill: #43a047;
+}
+.node.purple rect {
+    fill: #6139EE;
+}
+
+
 .node.assistant rect {
     fill: #9e9e9e;
 }
@@ -73,10 +83,29 @@ for (var i = 0; i < nodes.length; i++) {
             node.tags = ["assistant"]
           }
           else{
-            if(node.gender == "F")
-              {node.tags = ["F"]}
-              else{
-                node.tags = ["M"]
+            if(node.color == "#9e9e9e")
+              {
+                node.tags = ["gray"]
+              }
+            else if(node.color == "#2979ff")
+              {
+                node.tags = ["blue"]
+              }
+            else if(node.color == "#ec407a")
+              {
+                node.tags = ["pink"]
+              }
+            else if(node.color == "#43a047")
+              {
+                node.tags = ["green"]
+              }
+            else if(node.color == "#6139EE")
+              {
+                node.tags = ["purple"]
+              }
+              else
+              {
+                node.tags = ["gray"]
               }
           }
           // switch (node.gender) {
