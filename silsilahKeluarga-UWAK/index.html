@@ -49,8 +49,8 @@
 <body>
     <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <p class="info"></p>
-<div id="tree"><center><b>Loading</b></center></div>
+    <p class="info" style="text-align:center"><b>Loading...</b></p>
+<div id="tree"></div>
     <script>
 
     $(function(){
@@ -61,11 +61,11 @@
     dataType : 'json',
     success : function(data)
     {
-      $(".info").attr("hidden", true)
+      $("p.info").html("")
       tree(data)
     },
     error: function(x, e) {
-      $("p.info").html("<center><b>Gagal...</b></center>")
+      $("p.info").html("<b>Gagal !!! Silahkan coba lagi</b>")
     }
   })
 })
