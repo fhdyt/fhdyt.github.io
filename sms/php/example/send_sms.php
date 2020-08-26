@@ -25,8 +25,8 @@ else
 
 $message = new EnvayaSMS_OutgoingMessage();
 $message->id = uniqid("");
-$message->to = "081261747586";
-$message->message = "testtttttttt";
+$message->to = $to;
+$message->message = $body;
 
 file_put_contents("$OUTGOING_DIR_NAME/{$message->id}.json", json_encode($message));
 

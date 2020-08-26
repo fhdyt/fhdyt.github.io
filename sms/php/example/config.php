@@ -25,9 +25,9 @@ $OUTGOING_DIR_NAME = __DIR__."/outgoing_sms";
 
 $AMQP_SETTINGS = array(
     'host' => 'localhost',
-    'port' => 5672,
-    'user' => 'guest',
-    'password' => 'guest',
+    'port' => 80,
+    'user' => '',
+    'password' => '',
     'vhost' => '/',
     'queue_name' => "envayasms"
 );
